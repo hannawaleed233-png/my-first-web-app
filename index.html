@@ -38,12 +38,6 @@
             transition: 0.4s;
         }
 
-        .card:hover {
-            border-color: var(--primary-pink);
-            transform: translateY(-5px);
-            box-shadow: 0 0 20px rgba(255, 46, 126, 0.2);
-        }
-
         .profile-img {
             width: 120px; height: 120px;
             border-radius: 50%;
@@ -71,6 +65,72 @@
             display: flex; align-items: center; justify-content: center;
             border-radius: 50%;
         }
-        .social-links a:hover {
-            background: var(--primary-pink);
-            border
+        .social-links a:hover { background: var(--primary-pink); border-color: var(--primary-pink); color: white; }
+
+        #clock { font-weight: bold; margin: 15px 0; color: #555; font-size: 0.8rem; }
+
+        /* الزرار اللي كان مختفي */
+        #mode-btn {
+            background: transparent;
+            border: 2px solid var(--primary-pink);
+            color: var(--primary-pink);
+            padding: 10px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            margin-top: 25px;
+            font-weight: bold;
+            transition: 0.3s;
+            display: inline-block; /* للتأكد من ظهوره */
+        }
+        #mode-btn:hover { background: var(--primary-pink); color: white; }
+
+        .light-mode { --bg-black: #f0f2f5; --card-gray: #ffffff; --text-color: #1a1a1a; }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <img src="hhhhh.jpeg" alt="My Photo" class="profile-img">
+        <h1>Hanna Waleed</h1>
+        <p>Frontend Developer & UI Designer<br>Professional Web Developer.</p>
+
+        <div class="skills">
+            <i class="fab fa-html5"></i>
+            <i class="fab fa-css3-alt"></i>
+            <i class="fab fa-js"></i>
+            <i class="fab fa-github"></i>
+        </div>
+
+        <div id="clock">00:00:00</div>
+
+        <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="https://github.com/hannawaleed233-png"><i class="fab fa-github"></i></a>
+        </div>
+
+        <button id="mode-btn">Switch Theme ☀️</button>
+    </div>
+
+    <script>
+        function updateClock() {
+            const now = new Date();
+            document.getElementById('clock').innerText = now.toLocaleTimeString();
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+
+        // كود تشغيل الزرار
+        const btn = document.getElementById('mode-btn');
+        btn.addEventListener('click', function() {
+            document.body.classList.toggle('light-mode');
+            if(document.body.classList.contains('light-mode')) {
+                btn.innerHTML = "Dark Mode 🌙";
+            } else {
+                btn.innerHTML = "Light Mode ☀️";
+            }
+        });
+    </script>
+</body>
+</html>
