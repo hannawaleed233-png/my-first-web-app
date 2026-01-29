@@ -12,17 +12,19 @@
             --primary-pink: #ff2e7e;
             --bg-black: #050505;
             --card-gray: #121212;
+            --text-color: #ffffff;
         }
 
         body { 
             background-color: var(--bg-black); 
-            color: white; 
+            color: var(--text-color); 
             font-family: 'Poppins', sans-serif; 
             margin: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
+            transition: 0.5s;
         }
 
         .card { 
@@ -39,6 +41,7 @@
         .card:hover {
             border-color: var(--primary-pink);
             transform: translateY(-5px);
+            box-shadow: 0 0 20px rgba(255, 46, 126, 0.2);
         }
 
         .profile-img {
@@ -53,67 +56,21 @@
         h1 { color: var(--primary-pink); font-size: 1.6rem; margin: 10px 0; }
         p { color: #888; font-size: 0.9rem; line-height: 1.6; }
 
-        /* قسم المهارات - Pro Touch */
         .skills { margin: 20px 0; display: flex; justify-content: center; gap: 15px; }
-        .skills i { 
-            font-size: 1.5rem; 
-            color: #444; 
-            transition: 0.3s;
-        }
+        .skills i { font-size: 1.5rem; color: #444; transition: 0.3s; }
         .skills i:hover { color: var(--primary-pink); transform: scale(1.2); }
 
-        /* أيقونات التواصل */
-        .social-links { margin-top: 25px; display: flex; justify-content: center; gap: 20px; }
+        .social-links { margin-top: 25px; display: flex; justify-content: center; gap: 15px; }
         .social-links a {
-            color: white;
-            font-size: 1.2rem;
+            color: var(--text-color);
+            font-size: 1.1rem;
             text-decoration: none;
             transition: 0.3s;
-            width: 40px; height: 40px;
+            width: 35px; height: 35px;
             border: 1px solid #333;
             display: flex; align-items: center; justify-content: center;
             border-radius: 50%;
         }
         .social-links a:hover {
             background: var(--primary-pink);
-            border-color: var(--primary-pink);
-            box-shadow: 0 0 15px var(--primary-pink);
-        }
-
-        #clock { font-weight: bold; margin: 15px 0; color: #555; font-size: 0.9rem; }
-    </style>
-</head>
-<body>
-
-    <div class="card">
-        <img src="hhhhh.jpeg" alt="My Photo" class="profile-img">
-        
-        <h1>Hanna Waleed</h1>
-        <p>Frontend Developer & UI Designer<br>Turning code into beautiful art.</p>
-
-        <div class="skills">
-            <i class="fab fa-html5" title="HTML5"></i>
-            <i class="fab fa-css3-alt" title="CSS3"></i>
-            <i class="fab fa-js" title="JavaScript"></i>
-            <i class="fab fa-github" title="GitHub"></i>
-        </div>
-
-        <div id="clock">00:00:00</div>
-
-        <div class="social-links">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="https://github.com/hannawaleed233-png"><i class="fab fa-github"></i></a>
-        </div>
-    </div>
-
-    <script>
-        function updateClock() {
-            const now = new Date();
-            document.getElementById('clock').innerText = now.toLocaleTimeString();
-        }
-        setInterval(updateClock, 1000);
-        updateClock();
-    </script>
-</body>
-</html>
+            border
